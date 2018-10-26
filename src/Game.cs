@@ -31,8 +31,8 @@ namespace Microsoft.Xna.Framework
 			private set;
 		}
 
-		private ContentManager INTERNAL_content;
-		public ContentManager Content
+		private AssetManager INTERNAL_content;
+		public AssetManager Content
 		{
 			get
 			{
@@ -224,8 +224,7 @@ namespace Microsoft.Xna.Framework
 
 			LaunchParameters = new LaunchParameters();
 			Components = new GameComponentCollection();
-			Services = new GameServiceContainer();
-			Content = new ContentManager(Services);
+			Services = new GameServiceContainer();			
 
 			updateableComponents = new List<IUpdateable>();
 			currentlyUpdatingComponents = new List<IUpdateable>();
@@ -249,8 +248,10 @@ namespace Microsoft.Xna.Framework
 
 			FrameworkDispatcher.Update();
 
-			// Ready to run the loop!
-			RunApplication = true;
+            Content = new AssetManager(Services, AssetManager.GameDirectory);
+
+            // Ready to run the loop!
+            RunApplication = true;
 		}
 
 		#endregion
@@ -307,8 +308,6 @@ namespace Microsoft.Xna.Framework
 					{
 						FNAPlatform.DisposeWindow(Window);
 					}
-
-					ContentTypeReaderManager.ClearTypeCreators();
 				}
 
 				AppDomain.CurrentDomain.UnhandledException -= OnUnhandledException;

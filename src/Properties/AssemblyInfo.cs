@@ -14,7 +14,7 @@ using System.Resources;
 #else
 [assembly: AssemblyConfiguration("Release")]
 #endif
-[assembly: AssemblyCompany("Ethan \"flibitijibibo\" Lee")]
+[assembly: AssemblyCompany("Ethan \"flibitijibibo\" Lee, While False Studios")]
 [assembly: AssemblyProduct("FNA")]
 [assembly: AssemblyCopyright("Copyright (c) 2009-2018")]
 [assembly: AssemblyTrademark("")]
@@ -44,4 +44,4 @@ using System.Resources;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("18.10.0.0")]
+[assembly: AssemblyVersion("20.0.0.0")]

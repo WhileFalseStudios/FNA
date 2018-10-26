@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -76,9 +76,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="src\Assets\AssetManager.cs" />
+    <Compile Include="src\Assets\AssetSearchPaths.cs" />
+    <Compile Include="src\Assets\VFS\DirectoryFileSystem.cs" />
+    <Compile Include="src\Assets\VFS\IVirtualFileSystemMount.cs" />
     <Compile Include="src\Audio\AudioCategory.cs" />
     <Compile Include="src\Audio\AudioChannels.cs" />
     <Compile Include="src\Audio\AudioEmitter.cs" />
@@ -103,75 +108,6 @@
     <Compile Include="src\BoundingSphere.cs" />
     <Compile Include="src\Color.cs" />
     <Compile Include="src\ContainmentType.cs" />
-    <Compile Include="src\Content\ContentExtensions.cs" />
-    <Compile Include="src\Content\ContentLoadException.cs" />
-    <Compile Include="src\Content\ContentManager.cs" />
-    <Compile Include="src\Content\ContentReader.cs" />
-    <Compile Include="src\Content\ContentReaders\AlphaTestEffectReader.cs" />
-    <Compile Include="src\Content\ContentReaders\ArrayReader.cs" />
-    <Compile Include="src\Content\ContentReaders\BasicEffectReader.cs" />
-    <Compile Include="src\Content\ContentReaders\BooleanReader.cs" />
-    <Compile Include="src\Content\ContentReaders\BoundingBoxReader.cs" />
-    <Compile Include="src\Content\ContentReaders\BoundingFrustumReader.cs" />
-    <Compile Include="src\Content\ContentReaders\BoundingSphereReader.cs" />
-    <Compile Include="src\Content\ContentReaders\ByteReader.cs" />
-    <Compile Include="src\Content\ContentReaders\CharReader.cs" />
-    <Compile Include="src\Content\ContentReaders\ColorReader.cs" />
-    <Compile Include="src\Content\ContentReaders\CurveReader.cs" />
-    <Compile Include="src\Content\ContentReaders\DateTimeReader.cs" />
-    <Compile Include="src\Content\ContentReaders\DecimalReader.cs" />
-    <Compile Include="src\Content\ContentReaders\DictionaryReader.cs" />
-    <Compile Include="src\Content\ContentReaders\DoubleReader.cs" />
-    <Compile Include="src\Content\ContentReaders\DualTextureEffectReader.cs" />
-    <Compile Include="src\Content\ContentReaders\EffectMaterialReader.cs" />
-    <Compile Include="src\Content\ContentReaders\EffectReader.cs" />
-    <Compile Include="src\Content\ContentReaders\EnumReader.cs" />
-    <Compile Include="src\Content\ContentReaders\EnvironmentMapEffectReader.cs" />
-    <Compile Include="src\Content\ContentReaders\ExternalReferenceReader.cs" />
-    <Compile Include="src\Content\ContentReaders\IndexBufferReader.cs" />
-    <Compile Include="src\Content\ContentReaders\Int16Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\Int32Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\Int64Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\ListReader.cs" />
-    <Compile Include="src\Content\ContentReaders\MatrixReader.cs" />
-    <Compile Include="src\Content\ContentReaders\ModelReader.cs" />
-    <Compile Include="src\Content\ContentReaders\NullableReader.cs" />
-    <Compile Include="src\Content\ContentReaders\PlaneReader.cs" />
-    <Compile Include="src\Content\ContentReaders\PointReader.cs" />
-    <Compile Include="src\Content\ContentReaders\QuaternionReader.cs" />
-    <Compile Include="src\Content\ContentReaders\RayReader.cs" />
-    <Compile Include="src\Content\ContentReaders\RectangleReader.cs" />
-    <Compile Include="src\Content\ContentReaders\ReflectiveReader.cs" />
-    <Compile Include="src\Content\ContentReaders\SByteReader.cs" />
-    <Compile Include="src\Content\ContentReaders\SingleReader.cs" />
-    <Compile Include="src\Content\ContentReaders\SkinnedEffectReader.cs" />
-    <Compile Include="src\Content\ContentReaders\SongReader.cs" />
-    <Compile Include="src\Content\ContentReaders\SoundEffectReader.cs" />
-    <Compile Include="src\Content\ContentReaders\SpriteFontReader.cs" />
-    <Compile Include="src\Content\ContentReaders\StringReader.cs" />
-    <Compile Include="src\Content\ContentReaders\Texture2DReader.cs" />
-    <Compile Include="src\Content\ContentReaders\Texture3DReader.cs" />
-    <Compile Include="src\Content\ContentReaders\TextureCubeReader.cs" />
-    <Compile Include="src\Content\ContentReaders\TextureReader.cs" />
-    <Compile Include="src\Content\ContentReaders\TimeSpanReader.cs" />
-    <Compile Include="src\Content\ContentReaders\UInt16Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\UInt32Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\UInt64Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\Vector2Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\Vector3Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\Vector4Reader.cs" />
-    <Compile Include="src\Content\ContentReaders\VertexBufferReader.cs" />
-    <Compile Include="src\Content\ContentReaders\VertexDeclarationReader.cs" />
-    <Compile Include="src\Content\ContentReaders\VideoReader.cs" />
-    <Compile Include="src\Content\ContentSerializerAttribute.cs" />
-    <Compile Include="src\Content\ContentSerializerCollectionItemNameAttribute.cs" />
-    <Compile Include="src\Content\ContentSerializerIgnoreAttribute.cs" />
-    <Compile Include="src\Content\ContentSerializerRuntimeTypeAttribute.cs" />
-    <Compile Include="src\Content\ContentSerializerTypeVersionAttribute.cs" />
-    <Compile Include="src\Content\ContentTypeReader.cs" />
-    <Compile Include="src\Content\ContentTypeReaderManager.cs" />
-    <Compile Include="src\Content\LzxDecoder.cs" />
-    <Compile Include="src\Content\ResourceContentManager.cs" />
     <Compile Include="src\Curve.cs" />
     <Compile Include="src\CurveContinuity.cs" />
     <Compile Include="src\CurveKey.cs" />
@@ -400,6 +336,7 @@
     <Compile Include="lib\FAudio\csharp\FAudio.cs" />
     <Compile Include="lib\MojoShader\csharp\MojoShader.cs" />
     <Compile Include="lib\Theorafile\csharp\Theorafile.cs" />
+    <Compile Include="src\XML\XML.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FNA.dll.config">

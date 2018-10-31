@@ -10,3 +10,6 @@
 [submodule "lib/Theorafile"]
 	path = lib/Theorafile
 	url = git://github.com/FNA-XNA/Theorafile.git
+[submodule "lib/YamlDotNet"]
+	path = lib/YamlDotNet
+	url = https://github.com/aaubry/YamlDotNet.git

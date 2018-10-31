@@ -9,6 +9,6 @@ namespace Microsoft.Xna.Framework
     {
         bool DoesAssetExist(string path);
 
-        string RootDirectory { get; set; }
+        string RootPath { get; set; }
     }
 }

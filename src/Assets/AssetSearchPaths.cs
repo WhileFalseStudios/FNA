@@ -1,5 +1,6 @@
 ﻿using MonoGame.Utilities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Xml.Serialization;
 namespace Microsoft.Xna.Framework
 {
     [XmlRoot("SearchPaths")]
-    public sealed class AssetSearchPaths
+    public sealed class AssetSearchPaths : IEnumerable<string>
     {
         [XmlElement(ElementName = "Path")]
         public List<string> searchPaths;
@@ -40,5 +41,17 @@ namespace Microsoft.Xna.Framework
             searchPaths.ForEach(path => FNALoggerEXT.LogInfo.Invoke(path));
             FNALoggerEXT.LogInfo.Invoke("----------");
         }
+
+        #region IEnumerator Support
+        public IEnumerator<string> GetEnumerator()
+        {
+            return searchPaths.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return searchPaths.GetEnumerator();
+        }
+        #endregion
     }
 }

@@ -33,9 +33,9 @@ namespace Microsoft.Xna.Framework
 
             try
             {
-                using (FileStream fs = File.OpenRead(Path.Combine(GameDirectory, "DataSearchPaths.xml")))
+                using (FileStream fs = File.OpenRead(Path.Combine(GameDirectory, "DataSearchPaths.yaml")))
                 {
-                    searchPaths = XML.Deserialize<AssetSearchPaths>(fs);
+                    searchPaths = YAML.Deserialize<AssetSearchPaths>(fs);
                     if (searchPaths is null)
                     {
                         throw new Exception("XML deserialisation failed");

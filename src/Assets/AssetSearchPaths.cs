@@ -4,15 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
+using YamlDotNet.Serialization;
 
 namespace Microsoft.Xna.Framework
 {
-    [XmlRoot("SearchPaths")]
     public sealed class AssetSearchPaths : IEnumerable<string>
     {
-        [XmlElement(ElementName = "Path")]
-        public List<string> searchPaths;
+        [YamlMember]
+        public List<string> searchPaths { get; private set; }
 
         public AssetSearchPaths()
         {

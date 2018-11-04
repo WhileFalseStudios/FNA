@@ -8,6 +8,8 @@ namespace Microsoft.Xna.Framework
 {
     class YamlAssetLoader<T> : IAssetLoader<YamlAsset<T>>
     {
+        public AssetManager Context { get; set; }
+
         public YamlAsset<T> LoadFromStream(Stream stream)
         {
             string yaml = null;

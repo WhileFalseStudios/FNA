@@ -15,6 +15,19 @@ namespace Microsoft.Xna.Framework
             return File.Exists(Path.Combine(RootPath, path));
         }
 
+        public Stream GetAssetStream(string path)
+        {
+            try
+            {
+                return File.OpenRead(Path.Combine(RootPath, path));
+            }
+            catch (Exception ex)
+            {
+                FNALoggerEXT.LogError.Invoke($"Failed opening stream to {path}: {ex.Message}");
+                return null;
+            }
+        }
+
         public override string ToString()
         {
             return $"Directory filesystem @ {RootPath}";

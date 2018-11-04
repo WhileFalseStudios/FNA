@@ -248,7 +248,7 @@ namespace Microsoft.Xna.Framework
 
 			FrameworkDispatcher.Update();
 
-            Content = new AssetManager(Services, AssetManager.GameDirectory);
+            Content = new AssetManager(this, Services, AssetManager.GameDirectory);
 
             // Ready to run the loop!
             RunApplication = true;

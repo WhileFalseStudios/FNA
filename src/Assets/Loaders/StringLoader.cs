@@ -8,6 +8,8 @@ namespace Microsoft.Xna.Framework
 {
     class StringLoader : IAssetLoader<string>
     {
+        public AssetManager Context { get; set; }
+
         public string LoadFromStream(Stream stream)
         {
             using (StreamReader sr = new StreamReader(stream))

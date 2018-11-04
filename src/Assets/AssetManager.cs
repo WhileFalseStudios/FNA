@@ -49,6 +49,28 @@ namespace Microsoft.Xna.Framework
             }
         }
 
+        #region Asset Loading
+
+        private void BuildLoaderList()
+        {
+
+        }
+
+        public T Load<T>(string path)
+        {
+            if (path is null) throw new ArgumentNullException(nameof(path));
+
+            // See if an asset at that path and of this type already exists (lookup strings maybe should also track type). Return that if it exists.
+            // Check if the file exists from the AssetSearchPaths. If not, throw or return default(T)
+            // Look through all loaders to see if there's one that matches IAssetLoader<T>. If so instantiate it.
+            // Get the stream to the desired file from the VFS system. Pass it into the asset loader.
+            // Store the resulting asset along with its reference count.
+            // Return the asset
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
         #region VFS Mounting
 
         /// <summary>

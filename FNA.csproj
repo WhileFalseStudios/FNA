@@ -266,6 +266,9 @@
     <Compile Include="lib\YamlDotNet\YamlDotNet\Serialization\YamlMember.cs" />
     <Compile Include="src\Assets\AssetManager.cs" />
     <Compile Include="src\Assets\AssetSearchPaths.cs" />
+    <Compile Include="src\Assets\Loaders\IAssetLoader.cs" />
+    <Compile Include="src\Assets\Loaders\StringLoader.cs" />
+    <Compile Include="src\Assets\Loaders\YamlAssetLoader.cs" />
     <Compile Include="src\Assets\VFS\DirectoryFileSystem.cs" />
     <Compile Include="src\Assets\VFS\IVirtualFileSystemMount.cs" />
     <Compile Include="src\Audio\AudioCategory.cs" />
@@ -521,6 +524,7 @@
     <Compile Include="lib\MojoShader\csharp\MojoShader.cs" />
     <Compile Include="lib\Theorafile\csharp\Theorafile.cs" />
     <Compile Include="src\YAML\YAML.cs" />
+    <Compile Include="src\YAML\YamlAsset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FNA.dll.config">

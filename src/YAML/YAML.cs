@@ -27,12 +27,22 @@ namespace Microsoft.Xna.Framework
             }
         }
 
+        public static T Deserialize<T>(string file)
+        {
+            return deserializer.Deserialize<T>(file);
+        }
+
         public static void Serialize<T>(T obj, Stream stream)
         {
             using (StreamWriter sw = new StreamWriter(stream))
             {
                 serializer.Serialize(sw, obj);
             }
+        }
+
+        public static string Serialize<T>(T obj)
+        {
+            return serializer.Serialize(obj);
         }
     }
 }

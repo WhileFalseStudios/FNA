@@ -1,7 +1,6 @@
-This is FNA, an XNA4 reimplementation that focuses solely on developing a fully
-accurate XNA4 runtime for the desktop.
+Modified fork of FNA. Changes made are to accomodate how we make games.
 
-Project Website: http://fna-xna.github.io/
+This fork has no goal of maintaining compatibility with XNA and major framework components are subject to change.
 
 License
 -------
@@ -15,6 +14,9 @@ See monoxna.LICENSE for details.
 
 Documentation
 -------------
+FNA changes are documented on our own wiki:
+https://github.com/WhileFalseStudios/FNA/wiki
+
 Documentation for FNA can be found on the FNA wiki:
 
 https://github.com/FNA-XNA/FNA/wiki

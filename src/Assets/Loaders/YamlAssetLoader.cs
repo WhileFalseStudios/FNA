@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Microsoft.Xna.Framework
 {
-    class YamlAssetLoader<T> : IAssetLoader<YamlAsset<T>>
+    class YamlAssetLoader : IAssetLoader<YamlAsset>
     {
         public AssetManager Context { get; set; }
 
-        public YamlAsset<T> LoadFromStream(Stream stream)
+        public YamlAsset LoadFromStream(Stream stream)
         {
             string yaml = null;
 
@@ -19,7 +19,7 @@ namespace Microsoft.Xna.Framework
                 yaml = sr.ReadToEnd();
             }
 
-            return new YamlAsset<T>(yaml);
+            return new YamlAsset(yaml);
         }
     }
 }

@@ -11,6 +11,19 @@ namespace Microsoft.Xna.Framework
     {
         public IServiceProvider ServiceProvider { get; private set; }
 
+        /// <summary>
+        /// Are we allowed to mount relevant directories when setting mount points?
+        /// </summary>
+        public bool AllowDirectoryMounting { get; set; } = true;
+        /// <summary>
+        /// Are we allowed to mount relevant .pak files when setting mount points?
+        /// </summary>
+        public bool AllowArchiveMounting { get; set; } = true;
+        /// <summary>
+        /// Are we allowed to mount relevant bigfiles when setting mount points?
+        /// </summary>
+        public bool AllowBigfileMounting { get; set; } = true;
+
         public Game Game { get; }
         private AssetSearchPaths searchPaths;
         private List<IVirtualFileSystemMount> fileSystems = new List<IVirtualFileSystemMount>();
@@ -158,14 +171,14 @@ namespace Microsoft.Xna.Framework
         #region VFS Mounting
 
         /// <summary>
-        /// Mounts a given path in the filesystem. This should be given without an extension as we automatically look for all of the relevant
-        /// file types.
-        /// The load order is:
+        /// <para>Mounts a given path in the filesystem. This should be given without an extension as we automatically look for all of the relevant
+        /// file types.</para>
+        /// <para>The load order is:
         /// For each search path...
-        ///     Look for [path]/ (a directory)
-        ///     Look for [path].pak (a renamed zip file)
-        ///     Look for [path].dat (a bigfile)
-        /// Multiple paths may be mounted by default. Set onlyFirst to true to only mount the first valid path and ignore any others.
+        ///     - Look for [path]/ (a directory)
+        ///     - Look for [path].pak (a renamed zip file)
+        ///     - Look for [path].dat (a bigfile)</para>
+        /// <para>Multiple paths may be mounted by default. Set onlyFirst to true to only mount the first valid path and ignore any others.</para>
         /// </summary>
         /// <param name="path">The path to try and find a mountable path in. Relative to any data path from DataSearchPaths.xml and with no extension.</param>
         /// <param name="onlyFirst">Only mount the first valid path. Any successive valid paths are discarded.</param>
@@ -174,13 +187,13 @@ namespace Microsoft.Xna.Framework
         {
             if (path is null) throw new ArgumentNullException("path");
 
-            string pathAsBigFile = Path.ChangeExtension(path, ".dat");
+            string pathAsBigFile = Path.ChangeExtension(path, ".fat");
             string pathAsArchive = Path.ChangeExtension(path, ".pak");
             int foundCount = 0;
             
             foreach (var dataDir in searchPaths)
             {
-                if (Directory.Exists(Path.Combine(dataDir, path))) // We found a directory with the given name, load it
+                if (AllowDirectoryMounting && Directory.Exists(Path.Combine(dataDir, path))) // We found a directory with the given name, load it
                 {
                     DirectoryFileSystem dfs = new DirectoryFileSystem();
                     dfs.RootPath = Path.Combine(dataDir, path);
@@ -188,13 +201,21 @@ namespace Microsoft.Xna.Framework
                     foundCount++;
                     if (onlyFirst) break;
                 }
-                if (File.Exists(Path.Combine(dataDir, pathAsArchive))) // We found an archive file with the given name
+                if (AllowArchiveMounting && File.Exists(Path.Combine(dataDir, pathAsArchive))) // We found an archive file with the given name
                 {
-                    throw new NotImplementedException("Archive filesystem not yet implemented");
+                    PakFileSystem pfs = new PakFileSystem();
+                    pfs.RootPath = Path.Combine(dataDir, pathAsArchive);
+                    fileSystems.Add(pfs);
+                    foundCount++;
+                    if (onlyFirst) break;
                 }
-                if (File.Exists(Path.Combine(dataDir, pathAsBigFile))) // We found a bigfile with the given name
+                if (AllowBigfileMounting && File.Exists(Path.Combine(dataDir, pathAsBigFile))) // We found a bigfile with the given name
                 {
-                    throw new NotImplementedException("Bigfile filesystem not yet implemented");
+                    BigfileFileSystem bfs = new BigfileFileSystem();
+                    bfs.RootPath = Path.Combine(dataDir, pathAsBigFile);
+                    fileSystems.Add(bfs);
+                    foundCount++;
+                    if (onlyFirst) break;
                 }                
             }
 

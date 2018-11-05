@@ -6,10 +6,9 @@ using System.Text;
 namespace Microsoft.Xna.Framework
 {
     /// <summary>
-    /// A yaml file on disk that can be deserialized into the specified class.
+    /// A yaml file on disk that can be deserialized into a specific class.
     /// </summary>
-    /// <typeparam name="T">The object type to deserialize</typeparam>
-    public class YamlAsset<T> : IDisposable
+    public class YamlAsset : IDisposable
     {
         private string yamlString;
         private WeakReference cachedObjectReference;
@@ -20,17 +19,14 @@ namespace Microsoft.Xna.Framework
         /// Note: the return value is cached, so a unique object is not garuanteed each time this method is called.
         /// </summary>
         /// <returns>The deserialized object.</returns>
-        public T Object
+        public T GetObject<T>()
         {
-            get
+            if (!cachedObjectReference.IsAlive && !disposed)
             {
-                if (!cachedObjectReference.IsAlive && !disposed)
-                {
-                    cachedObjectReference.Target = YAML.Deserialize<T>(yamlString);
-                }
-
-                return (T)cachedObjectReference.Target;
+                cachedObjectReference.Target = YAML.Deserialize<T>(yamlString);
             }
+
+            return (T)cachedObjectReference.Target;
         }
 
         internal YamlAsset(string yaml)

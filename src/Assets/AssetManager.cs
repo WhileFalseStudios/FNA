@@ -152,7 +152,7 @@ namespace Microsoft.Xna.Framework
             }
             catch (Exception ex)
             {
-                FNALoggerEXT.LogError.Invoke($"Asset Manager: asset load failed for {path} Reason: {ex.Message}");
+                FNALoggerEXT.LogError.Invoke($"Asset Manager: asset load failed for {path} Reason: {ex.Message} ({ex.GetType().Name})");
                 return default(T);
             }
         }

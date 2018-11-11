@@ -1,0 +1,1 @@
+The original dylibs in fnalibs don't work properly as FAudio and SDL2-image were hardcoded to reference the system installed version of SDL2. Even if the local version existed, they would try and load the system one, which on my computer lead to errors since they wanted version 9.0.0, but I only had 5.0.0 installed.

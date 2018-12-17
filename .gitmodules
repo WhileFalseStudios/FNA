@@ -13,3 +13,6 @@
 [submodule "lib/YamlDotNet"]
 	path = lib/YamlDotNet
 	url = https://github.com/aaubry/YamlDotNet.git
+[submodule "lib/FMDL"]
+	path = lib/FMDL
+	url = https://github.com/WhileFalseStudios/FMDL.git

@@ -547,6 +547,7 @@
     <None Include="FNA.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="FNANativeLibs.props" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="src\Graphics\Effect\StockEffects\FXB\AlphaTestEffect.fxb">

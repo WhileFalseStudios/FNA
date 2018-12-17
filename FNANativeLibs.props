@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <AvailableItemName Include="NativeDependencies">
+            <Visible>false</Visible>
+        </AvailableItemName>
+    </ItemGroup>
+    <ItemGroup>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib64\libFAudio.so" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libFAudio.so</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib64\libmojoshader.so" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libmojoshader.so</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib64\libSDL2-2.0.so.0" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libSDL2-2.0.so.0</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib64\libSDL2_image-2.0.so.0" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libSDL2_image-2.0.so.0</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib64\libtheorafile.so" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libtheorafile.so</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib\libFAudio.so" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libFAudio.so</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib\libmojoshader.so" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libmojoshader.so</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib\libSDL2-2.0.so.0" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libSDL2-2.0.so.0</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib\libSDL2_image-2.0.so.0" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libSDL2_image-2.0.so.0</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib\libtheorafile.so" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libtheorafile.so</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libFAudio.dylib" Condition="'$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libFAudio.dylib</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libmojoshader.dylib" Condition="'$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libmojoshader.dylib</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libSDL2-2.0.0.dylib" Condition="'$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libSDL2-2.0.0.dylib</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libSDL2_image-2.0.0.dylib" Condition="'$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libSDL2_image-2.0.0.dylib</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libtheorafile.dylib" Condition="'$(OS)'!='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libtheorafile.dylib</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win32\FAudio.dll" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>FAudio.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win32\libtheorafile.dll" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libtheorafile.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win32\MojoShader.dll" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>MojoShader.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win32\SDL2.dll" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>SDL2.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win32\SDL2_image.dll" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>SDL2_image.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win64\FAudio.dll" Condition="'$(Platform)'=='x64' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>FAudio.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win64\libtheorafile.dll" Condition="'$(Platform)'=='x64' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>libtheorafile.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win64\MojoShader.dll" Condition="'$(Platform)'=='x64' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>MojoShader.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win64\SDL2.dll" Condition="'$(Platform)'=='x64' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>SDL2.dll</TargetPath>
+        </NativeDependencies>
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\win64\SDL2_image.dll" Condition="'$(Platform)'=='x64' and '$(OS)'=='Windows_NT'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>SDL2_image.dll</TargetPath>
+        </NativeDependencies>
+    </ItemGroup>
+    <Target Name="AfterBuild">
+        <Copy DestinationFolder="$(OutputPath)" SourceFiles="@(NativeDependencies)" SkipUnchangedFiles="true"/>
+    </Target>
+</Project>

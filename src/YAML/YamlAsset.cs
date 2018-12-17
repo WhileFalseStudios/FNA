@@ -23,7 +23,7 @@ namespace Microsoft.Xna.Framework
         {
             if (!cachedObjectReference.IsAlive && !disposed)
             {
-                cachedObjectReference.Target = YAML.Deserialize<T>(yamlString);
+                cachedObjectReference = new WeakReference(YAML.Deserialize<T>(yamlString));
             }
 
             return (T)cachedObjectReference.Target;

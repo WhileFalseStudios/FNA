@@ -10,6 +10,8 @@
 #region Using Statements
 using System;
 using System.Collections.Generic;
+using System.IO;
+using WhileFalse.FMDL;
 #endregion
 
 namespace Microsoft.Xna.Framework.Graphics
@@ -231,6 +233,23 @@ namespace Microsoft.Xna.Framework.Graphics
 			}
 		}
 
-		#endregion
-	}
+        #endregion
+
+        #region Public Static Model Load Methods
+
+        /// <summary>
+        /// Creates a model from the specified stream. Model must be in FMDL format.
+        /// </summary>
+        /// <param name="device"></param>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static Model FromStream(GraphicsDevice device, Stream stream)
+        {
+            FMDLFile fmdl = FMDLFile.FromStream(stream);
+            //Magic here
+            return new Model(device, null, null); //FIXME
+        }
+
+        #endregion
+    }
 }

@@ -65,7 +65,7 @@
     <DebugType>full</DebugType>
     <Optimize>False</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG;FNA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
@@ -81,6 +81,7 @@
     <ConsolePause>False</ConsolePause>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>FNA</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -89,6 +90,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="lib\FMDL\FMDL_Loader\FMDLFile.cs" />
+    <Compile Include="lib\FMDL\FMDL_Loader\Vector3.cs" />
     <Compile Include="lib\YamlDotNet\YamlDotNet\Core\AnchorNotFoundException.cs" />
     <Compile Include="lib\YamlDotNet\YamlDotNet\Core\CharacterAnalyzer.cs" />
     <Compile Include="lib\YamlDotNet\YamlDotNet\Core\Constants.cs" />

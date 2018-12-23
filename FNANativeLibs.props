@@ -46,23 +46,23 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libtheorafile.so</TargetPath>
         </NativeDependencies>
-        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libFAudio.dylib" Condition="'$(OS)'!='Windows_NT'">
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libFAudio.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libFAudio.dylib</TargetPath>
         </NativeDependencies>
-        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libmojoshader.dylib" Condition="'$(OS)'!='Windows_NT'">
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libmojoshader.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libmojoshader.dylib</TargetPath>
         </NativeDependencies>
-        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libSDL2-2.0.0.dylib" Condition="'$(OS)'!='Windows_NT'">
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libSDL2-2.0.0.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libSDL2-2.0.0.dylib</TargetPath>
         </NativeDependencies>
-        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libSDL2_image-2.0.0.dylib" Condition="'$(OS)'!='Windows_NT'">
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libSDL2_image-2.0.0.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libSDL2_image-2.0.0.dylib</TargetPath>
         </NativeDependencies>
-        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libtheorafile.dylib" Condition="'$(OS)'!='Windows_NT'">
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libtheorafile.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libtheorafile.dylib</TargetPath>
         </NativeDependencies>

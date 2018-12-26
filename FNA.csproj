@@ -545,12 +545,15 @@
     <Compile Include="lib\Theorafile\csharp\Theorafile.cs" />
     <Compile Include="src\YAML\YAML.cs" />
     <Compile Include="src\YAML\YamlAsset.cs" />
+    <Compile Include="src\Assets\Loaders\ModelLoader.cs" />
+    <Compile Include="src\Assets\Bigfile\BigfileWriteSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FNA.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="FNANativeLibs.props" />
+    <None Include="src\Graphics\Model\README.md" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="src\Graphics\Effect\StockEffects\FXB\AlphaTestEffect.fxb">
@@ -574,5 +577,8 @@
     <EmbeddedResource Include="src\Graphics\Effect\YUVToRGBA\YUVToRGBAEffect.fxb">
       <LogicalName>Microsoft.Xna.Framework.Graphics.Effect.Resources.YUVToRGBAEffect.fxb</LogicalName>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\Graphics\Model\" />
   </ItemGroup>
 </Project>

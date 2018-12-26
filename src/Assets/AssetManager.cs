@@ -145,6 +145,7 @@ namespace Microsoft.Xna.Framework
             {
                 using (Stream stream = mount.GetAssetStream(path))
                 {
+                    loader.FilePath = path;
                     var asset = loader.LoadFromStream(stream);
                     assets.Add(path, asset);
                     return asset;

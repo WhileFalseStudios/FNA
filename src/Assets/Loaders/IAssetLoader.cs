@@ -9,6 +9,7 @@ namespace Microsoft.Xna.Framework
     public interface IAssetLoader<T>
     {
         AssetManager Context { get; set; }
+        string FilePath { get; set; }
         T LoadFromStream(Stream stream);
     }
 }

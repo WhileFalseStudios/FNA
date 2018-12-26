@@ -9,6 +9,7 @@ namespace Microsoft.Xna.Framework
     class YamlAssetLoader : IAssetLoader<YamlAsset>
     {
         public AssetManager Context { get; set; }
+        public string FilePath { get; set; }
 
         public YamlAsset LoadFromStream(Stream stream)
         {

@@ -1,6 +1,6 @@
 #region License
 /* FNA - XNA4 Reimplementation for Desktop Platforms
- * Copyright 2009-2018 Ethan Lee and the MonoGame Team
+ * Copyright 2009-2019 Ethan Lee and the MonoGame Team
  *
  * Released under the Microsoft Public License.
  * See LICENSE for details.
@@ -2492,7 +2492,7 @@ namespace Microsoft.Xna.Framework.Graphics
 			else
 			{
 				// Set pixel alignment to match texel size in bytes
-				int packSize = Texture.GetFormatSize(format);
+				int packSize = Texture.GetPixelStoreAlignment(format);
 				if (packSize != 4)
 				{
 					glPixelStorei(
@@ -2628,7 +2628,7 @@ namespace Microsoft.Xna.Framework.Graphics
 			IntPtr ptr
 		) {
 			// Set pixel alignment to match texel size in bytes
-			int packSize = Texture.GetFormatSize(texture.Format);
+			int packSize = Texture.GetPixelStoreAlignment(texture.Format);
 			if (packSize != 4)
 			{
 				glPixelStorei(

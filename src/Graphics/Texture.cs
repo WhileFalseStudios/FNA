@@ -1,6 +1,6 @@
 #region License
 /* FNA - XNA4 Reimplementation for Desktop Platforms
- * Copyright 2009-2018 Ethan Lee and the MonoGame Team
+ * Copyright 2009-2019 Ethan Lee and the MonoGame Team
  *
  * Released under the Microsoft Public License.
  * See LICENSE for details.
@@ -95,6 +95,16 @@ namespace Microsoft.Xna.Framework.Graphics
 				default:
 					throw new ArgumentException("Should be a value defined in SurfaceFormat", "Format");
 			}
+		}
+
+		internal static int GetPixelStoreAlignment(SurfaceFormat format) 
+		{
+			/*
+			 * https://github.com/FNA-XNA/FNA/pull/238
+			 * https://www.khronos.org/registry/OpenGL/specs/gl/glspec21.pdf
+			 * OpenGL 2.1 Specification, section 3.6.1, table 3.1 specifies that the pixelstorei alignment cannot exceed 8
+			 */
+			return Math.Min(8, GetFormatSize(format));
 		}
 
 		#endregion

@@ -1,6 +1,6 @@
 #region License
 /* FNA - XNA4 Reimplementation for Desktop Platforms
- * Copyright 2009-2018 Ethan Lee and the MonoGame Team
+ * Copyright 2009-2019 Ethan Lee and the MonoGame Team
  *
  * Released under the Microsoft Public License.
  * See LICENSE for details.
@@ -78,6 +78,7 @@ namespace Microsoft.Xna.Framework
 			StopMicrophone =		SDL2_FNAPlatform.StopMicrophone;
 			GetTouchCapabilities =		SDL2_FNAPlatform.GetTouchCapabilities;
 			GetNumTouchFingers =		SDL2_FNAPlatform.GetNumTouchFingers;
+			SupportsOrientationChanges =	SDL2_FNAPlatform.SupportsOrientationChanges;
 
 			// Don't overwrite application log hooks!
 			if (FNALoggerEXT.LogInfo == null)
@@ -286,6 +287,9 @@ namespace Microsoft.Xna.Framework
 
 		public delegate int GetNumTouchFingersFunc();
 		public static readonly GetNumTouchFingersFunc GetNumTouchFingers;
+
+		public delegate bool SupportsOrientationChangesFunc();
+		public static readonly SupportsOrientationChangesFunc SupportsOrientationChanges;
 
 		#endregion
 	}

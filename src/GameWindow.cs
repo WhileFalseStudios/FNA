@@ -1,6 +1,6 @@
 #region License
 /* FNA - XNA4 Reimplementation for Desktop Platforms
- * Copyright 2009-2018 Ethan Lee and the MonoGame Team
+ * Copyright 2009-2019 Ethan Lee and the MonoGame Team
  *
  * Released under the Microsoft Public License.
  * See LICENSE for details.
@@ -35,6 +35,7 @@ namespace Microsoft.Xna.Framework
 		public abstract DisplayOrientation CurrentOrientation
 		{
 			get;
+			internal set;
 		}
 
 		public abstract IntPtr Handle

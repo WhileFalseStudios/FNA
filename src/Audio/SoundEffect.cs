@@ -1,6 +1,6 @@
 #region License
 /* FNA - XNA4 Reimplementation for Desktop Platforms
- * Copyright 2009-2018 Ethan Lee and the MonoGame Team
+ * Copyright 2009-2019 Ethan Lee and the MonoGame Team
  *
  * Released under the Microsoft Public License.
  * See LICENSE for details.
@@ -93,9 +93,9 @@ namespace Microsoft.Xna.Framework.Audio
 			}
 			set
 			{
-				if (value <= 0.0f)
+				if (value < 0.0f)
 				{
-					throw new ArgumentOutOfRangeException("value <= 0.0f");
+					throw new ArgumentOutOfRangeException("value < 0.0f");
 				}
 				Device().DopplerScale = value;
 			}

@@ -46,7 +46,7 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libtheorafile.so</TargetPath>
         </NativeDependencies>
-        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libFAudio.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
+        <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libFAudio.0.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>libFAudio.0.dylib</TargetPath>
         </NativeDependencies>

@@ -548,6 +548,9 @@
     <Compile Include="src\YAML\YamlAsset.cs" />
     <Compile Include="src\Assets\Loaders\ModelLoader.cs" />
     <Compile Include="src\Assets\Bigfile\BigfileWriteSettings.cs" />
+    <Compile Include="lib\YamlDotNet\YamlDotNet\Serialization\ObjectGraphTraversalStrategyFactory.cs" />
+    <Compile Include="lib\YamlDotNet\YamlDotNet\Serialization\TypeInspectors\CompositeTypeInspector.cs" />
+    <Compile Include="lib\YamlDotNet\YamlDotNet\Serialization\TypeInspectors\ReadableFieldsTypeInspector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FNA.dll.config">

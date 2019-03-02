@@ -27,17 +27,17 @@ namespace Microsoft.Xna.Framework
 
         private Model LoadGLTF2(Stream stream)
         {
-
+            return null;
         }
 
         private Model LoadGLB(Stream stream)
         {
-
+            return null;
         }
 
         private Model LoadFMDL(Stream stream)
         {
-
+            return null;
         }
     }
 }

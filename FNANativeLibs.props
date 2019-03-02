@@ -8,7 +8,7 @@
     <ItemGroup>
         <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib64\libFAudio.so" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>libFAudio.so</TargetPath>
+            <TargetPath>libFAudio.so.0</TargetPath>
         </NativeDependencies>
         <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib64\libmojoshader.so" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -28,7 +28,7 @@
         </NativeDependencies>
         <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib\libFAudio.so" Condition="'$(Platform)'=='x64' and '$(OS)'!='Windows_NT'">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>libFAudio.so</TargetPath>
+            <TargetPath>libFAudio.so.0</TargetPath>
         </NativeDependencies>
         <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\lib\libmojoshader.so" Condition="'$(Platform)'=='x86' or '$(Platform)'=='AnyCPU' and '$(OS)'!='Windows_NT'">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -48,7 +48,7 @@
         </NativeDependencies>
         <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libFAudio.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>libFAudio.dylib</TargetPath>
+            <TargetPath>libFAudio.0.dylib</TargetPath>
         </NativeDependencies>
         <NativeDependencies Include="$(SolutionDir)\FNA\lib\fnalibs\osx\libmojoshader.dylib" Condition="$(PATH.Contains('/Library/Frameworks/'))">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

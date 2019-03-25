@@ -283,6 +283,7 @@
     <Compile Include="src\Assets\Bigfile\BigfileEntry.cs" />
     <Compile Include="src\Assets\Bigfile\SubStream.cs" />
     <Compile Include="src\Assets\Loaders\IAssetLoader.cs" />
+    <Compile Include="src\Assets\Loaders\SpriteFontLoader.cs" />
     <Compile Include="src\Assets\Loaders\StringLoader.cs" />
     <Compile Include="src\Assets\Loaders\Texture2DLoader.cs" />
     <Compile Include="src\Assets\Loaders\YamlAssetLoader.cs" />
@@ -535,6 +536,7 @@
     <Compile Include="src\Utilities\AssemblyHelper.cs" />
     <Compile Include="src\Utilities\FileHelpers.cs" />
     <Compile Include="src\Utilities\FNAInternalExtensions.cs" />
+    <Compile Include="src\Utilities\ParsingHelpers.cs" />
     <Compile Include="src\Utilities\XamarinHelper.cs" />
     <Compile Include="src\Vector2.cs" />
     <Compile Include="src\Vector3.cs" />
@@ -582,7 +584,5 @@
       <LogicalName>Microsoft.Xna.Framework.Graphics.Effect.Resources.YUVToRGBAEffect.fxb</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Graphics\Model\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

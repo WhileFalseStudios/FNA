@@ -56,7 +56,7 @@ namespace Microsoft.Xna.Framework
                         case "char":
                             chars.Add(kvPairs["letter"][1]); //HACKHACK
                             bounds.Add(new Rectangle(int.Parse(kvPairs["x"]), int.Parse(kvPairs["y"]), int.Parse(kvPairs["width"]), int.Parse(kvPairs["height"])));
-                            cropping.Add(new Rectangle(0, 0, 0, 0));
+                            cropping.Add(new Rectangle(int.Parse(kvPairs["xoffset"]), int.Parse(kvPairs["yoffset"]), 0, 0)); //b - int.Parse(kvPairs["height"])
                             kerning.Add(Vector3.One);
                             //spacing = float.Parse(kvPairs["xadvance"]); //FIXME: bmfont has this per-character but we need it set globally for the font, can we hack this together using kerning pairs?
                             break;
